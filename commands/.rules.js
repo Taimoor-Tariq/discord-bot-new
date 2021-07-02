@@ -35,6 +35,7 @@ function main(client, message, args) {
 `;
 
     message.channel.send({ content: rules, components: [row] })
+    message.channel.send({ content: "­\nOur invite link: https://discord.gg/WE5bJgD" })
 }
 
 module.exports = {
