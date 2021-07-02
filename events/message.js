@@ -19,6 +19,5 @@ async function main(message, client) {
 
 module.exports = {
 	name: 'message',
-    once: true,
 	execute: main
 }

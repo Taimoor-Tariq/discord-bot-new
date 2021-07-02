@@ -13,5 +13,6 @@ async function main(client) {
 
 module.exports = {
 	name: 'ready',
+	once: true,
 	execute: main
 }
