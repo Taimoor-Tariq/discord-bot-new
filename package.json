@@ -1,7 +1,7 @@
 {
-  "name": "bot1",
+  "name": "wolves-discord-bot",
   "version": "1.0.0",
-  "description": "Discord BOT",
+  "description": "Wolves Discord BOT",
   "main": "app.js",
   "scripts": {
     "start": "node ."

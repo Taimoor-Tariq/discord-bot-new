@@ -2,9 +2,12 @@ const { MessageButton, MessageActionRow } = require('discord.js');
 
 function main(client, message, args) {
     let user = message.author;
-    console.log(`${user.username} typed the 'test' command.`);
+    console.log(`${user.username} typed the 'rules' command.`);
     
     message.delete();
+    
+    if (user.id != "220161488516546561") return;
+    
     const row = new MessageActionRow()
         .addComponents(
             new MessageButton()

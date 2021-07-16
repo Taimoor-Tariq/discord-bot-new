@@ -1,4 +1,4 @@
-require('dotenv-flow').config();
+if (!process.env.BOT_TOKEN) require('dotenv-flow').config();
 const
     fs = require('fs'),
     Discord = require('discord.js'),
