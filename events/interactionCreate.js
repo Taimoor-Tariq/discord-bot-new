@@ -5,7 +5,7 @@ async function main(interaction, client) {
     }
 
     else if (interaction.isButton()) {
-        switch (interaction.customID) {
+        switch (interaction.customId) {
             case "ACCEPT_RULES":
                 var role = await interaction.guild.roles.fetch('649147478121381903');
                 await interaction.member.roles.add(role);
@@ -27,7 +27,7 @@ async function main(interaction, client) {
     }
 
     else if (interaction.isSelectMenu()) {
-        switch (interaction.customID) {
+        switch (interaction.customId) {
             case "PING_SELECT":
                 const
                     ANNOUNCEMENT_ROLES = {
