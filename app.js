@@ -1,13 +1,13 @@
-if (!process.env.BOT_TOKEN) require('dotenv-flow').config();
 const
     fs = require('fs'),
-    Discord = require('discord.js'),
-    { BOT_PREFIX, BOT_TOKEN } = require('./config.js'),
-    client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES] });
+    { Client, Intents, Collection } = require('discord.js'),
+    { BOT_TOKEN, BOT_PREFIX } = require('./config'),
+    client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
+client.commands = new Collection();
+client.slashCommands = new Collection();
 
-client.commands = new Discord.Collection();
-console.log(` \nLoading Commands and events:\n `);
+console.log(` \nLoading Commands and events:\n `);
 
 console.log('• Commands:');
 fs.readdirSync('./commands/').filter(file => file.endsWith('.js')).forEach(file => {
@@ -15,7 +15,7 @@ fs.readdirSync('./commands/').filter(file => file.endsWith('.js')).forEach(file 
     client.commands.set(command.name, command);
     console.log(` - Loaded → ${BOT_PREFIX}${command.name}`);
 });
-console.log(' ');
+console.log(' ');
 
 console.log('• Events:');
 fs.readdirSync('./events/').filter(file => file.endsWith('.js')).forEach(file => {
@@ -24,7 +24,6 @@ fs.readdirSync('./events/').filter(file => file.endsWith('.js')).forEach(file =>
     else client.on(event.name, (...args) => event.execute(...args, client));
     console.log(` - Loaded → ${event.name}`);
 });
-console.log(' ');
-
+console.log(' ');
 
 client.login(BOT_TOKEN);

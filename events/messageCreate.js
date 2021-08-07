@@ -1,5 +1,4 @@
-const
-    { BOT_PREFIX } = require('../config');
+const { BOT_PREFIX } = require('../config');
 
 async function main(message, client) {
     if (message.author.bot) return;
@@ -18,6 +17,6 @@ async function main(message, client) {
 }
 
 module.exports = {
-	name: 'message',
-	execute: main
-}
+    name: 'messageCreate',
+    execute: main
+};

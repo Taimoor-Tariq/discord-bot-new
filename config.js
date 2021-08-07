@@ -1,6 +1,6 @@
-module.exports = {    
-    "CLIENT_ID": process.env.CLIENT_ID,
-    "BOT_TOKEN": process.env.BOT_TOKEN,
-    
-    "BOT_PREFIX": "..",
+if (!process.env.TOKEN) require('dotenv').config();
+
+module.exports = {
+    BOT_TOKEN: process.env.TOKEN,
+    BOT_PREFIX: "."
 }
