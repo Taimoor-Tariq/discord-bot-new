@@ -2,7 +2,7 @@ const
     fs = require('fs'),
     { Client, Intents, Collection } = require('discord.js'),
     { BOT_TOKEN, BOT_PREFIX } = require('./config'),
-    client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+    client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS] });
 
 client.commands = new Collection();
 client.slashCommands = new Collection();

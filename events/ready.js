@@ -1,6 +1,6 @@
 async function main(client) {
-    await require('../modules/slash-loader')(client);
-    console.log(`\nLogged in as ${client.user.tag}`);
+    await require('../modules/app-commands-loader')(client);
+    console.log(`\nReady! Logged in as ${client.user.tag}`);
 }
 
 module.exports = {
