@@ -35,7 +35,7 @@ async function main(member, client) {
 
     const attachment = new MessageAttachment(canvas.toBuffer(), 'join-image.png');
 
-    client.guilds.cache.get('617434888555200576').channels.cache.get('708033893143674881').send({ files: [attachment] });
+    client.guilds.cache.get('617434888555200576').channels.cache.get('618957285728714755').send({ files: [attachment] });
 }
 
 module.exports = {
